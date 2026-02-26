@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @theme {
+            --font-syne: "Syne", sans-serif;
+            --font-dm: "DM Sans", sans-serif;
+            --color-navy: #1d3557;
+            --color-teal: #249d8f;
+            --color-coral: #e76f51;
+
+
+            --animate-fade-up: fadeUp 0.3s ease forwards;
+            @keyframes fadeUp {
+                0% {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+        }
+    </style>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family-DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/cc9e8f4940.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="bg-slate-100 font-dm min-h-screen">
+    <!-- Header  -->
+    <header class="py-6 md:max-w-6xl lg:px-10 mx-auto">
+        <h1 class="font-syne text-2xl md:text-3xl font-extrabold text-navy tracking-tight leading-relaxed">
+            Job Application Tracker
+        </h1>
+    </header>
+
+    <div class="md:max-w-6xl mx-auto">
+        <main class="px-5 pb-10 lg:px-10 overflow-y-auto">
+            <!-- Stats Cards -->
+            <div class="flex flex-wrap gap-4 mb-6">
+                <div class="flex-1 min-w-28 bg-white rounded-2xl px-6 py-5 shadow-sm">
+                    <p class="text-[15px] font-medium text-slate-500 mb-1">Total</p>
+                    <p class="font-syne text-4xl font-bold text-navy">0</p>
+                </div>
+                <div class="flex-1 min-w-28 bg-white rounded-2xl px-6 py-5 shadow-sm">
+                    <p class=" text-[15px] font-medium text-slate-500 mb-1">Interview</p>
+                    <p class="font-syne text-4xl font-bold text-teal">0</p>
+                </div>
+                <div class="flex-1 min-w-28 bg-white rounded-2xl px-6 py-5 shadow-sm">
+                    <p class="text-[15px] font-medium text-slate-500 mb-1">Rejected</p>
+                    <p class="font-syne text-4xl font-bold text-coral">0</p>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="border-slate-200 mb-6" />
+
+            <!-- Section Header -->
+            <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
+                <h2 class="font-syne text-xl font-bold text-navy">Available Jobs</h2>
+                <span class="text-sm text-slate-500 font-medium"><span>8</span> jobs</span>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex flex-wrap gap-2 mb-5">
+                <button
+                    class="btn hover:bg-gray-300"
+                >
+                    All
+                </button>
+                <button
+                    class="btn hover:bg-gray-300"
+                >
+                    Interview
+                </button>
+                <button
+                    class="btn hover:bg-gray-300"
+                >
+                    Rejected
+                </button>
+
+            </div>
+
+            <!-- Job Cards -->
+            <div id="jobs-container" class="flex flex-col gap-4">
+                <section class="">
+                    <div
+                        class="card bg-white rounded-2xl border-2 border-slate-100 px-6 py-5 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 animate-fadeUp h-70 relative">
+
+                        <div class=" lg:px-10 justify-between items-start gap-4">
+                            <div class="flex-1 min-w-0">
+                                <p class="font-syne text-[20px] font-bold text-navy text-base mb-0.5">Mobile First Corp</p>
+                                <p class="text-sm text-slate-500 mb-5">React Native Developer</p>
+                                
+                                <p class="text-xs text-slate-400 mb-5">
+                                    <span >Remote</span>
+                                    <span class="mx-1.5 text-slate-300">•</span>
+                                    <span>Full-time</span>
+                                    <span class="mx-1.5 text-slate-300">•</span>
+                                    <span>$130,000 - $175,000</span>
+                                </p>
+                                
+                            </div>
+                            <button
+                                class="text-[14px] font-bold uppercase h-10 w-30 flex items-center justify-center px-3 py-1 hover:bg-red-100 hover:text-black rounded-sm bg-slate-200 text-slate-500 mb-2"
+                            >
+                                Not Applied
+                            </button>
+
+                            <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                                Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-5">
+                                <button
+                                    class="text-xs font-semibold px-4 py-1.5 rounded-md border-2 border-teal text-teal bg-transparent cursor-pointer transition-all duration-150 hover:bg-teal hover:text-white"
+                                >
+                                    Interview
+                                </button>
+                                <button
+                                    class="text-xs font-semibold px-4 py-1.5 rounded-md border-2 border-coral text-coral bg-transparent cursor-pointer transition-all duration-150 hover:bg-coral hover:text-white"
+                                >
+                                    Rejected
+                                </button>
+                            </div>                        
+                        </div>
+
+                        <button
+                            class="absolute top-3 right-10 text-gray-400 hover:text-red-500 transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-transparent rounded-full">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="">Interview Section</section>
+                <section class="">Reject Section</section>
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="flex-col items-center justify-center py-20 gap-4 text-center">
+                    <div class="flex justify-center mb-4">
+                        <img src="./jobs.png" 
+                            alt="Empty State Icon" 
+                            class="w-24 mx-auto cursor-pointer filter grayscale brightness-135 transition duration-0 hover:grayscale-0" />
+                    </div>
+                    <p class="font-syne text-lg font-bold text-navy">No jobs available</p>
+                    <p class="text-sm text-slate-400">Check back soon for new job opportunities</p>
+            </div>  
+        </main>
+    </div>
+
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
